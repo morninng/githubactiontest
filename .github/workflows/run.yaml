@@ -6,8 +6,8 @@ jobs:
     steps:
       - run: echo "this is pen"
       - uses: actions/checkout@v3
-      - run: |
-        ls -al
+        run: |
+        ls -la
         cd .github/workflows/
-        ls -al
+        ls -la
 
