@@ -17,8 +17,8 @@ jobs:
           npm install
 
       - name: Run linters
-        working-directory: ./functions
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
+          working-directory: ./functions
           # prettier: true
