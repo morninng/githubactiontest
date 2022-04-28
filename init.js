@@ -1,5 +1,4 @@
-main();
 function main() {
-    console.log('Hello, world!');
-    hoge();
+    var aserSss = "ddd";
 }
+main();
