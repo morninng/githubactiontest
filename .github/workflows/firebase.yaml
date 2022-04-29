@@ -1,8 +1,5 @@
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   deploy:
@@ -11,14 +8,29 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Install Dependencies
+        
+      - name: Save the sercret file
+        run: envsubst < secret_file_src_envsubst.json > secret_file.json
+        env:
+            SECRET_FILE: ${{ secrets.SECRET_FILE }}
+      - name: Check
         run: |
-          cd functions
-          npm install
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting,functions:helloWorld
+          echo "-- sha256sum"
+          jq < secret_file.json | sha256sum 
+          echo "-- ファイル表示 cat secret_file.json"
+          cat secret_file.json
+          echo "-- フィールド表示 jq .password secret_file.json"
+          jq .password secret_file.json
+          echo "-- フィールド表示(RAW) jq -r .password secret_file.json"
+          jq -r .password secret_file.json```
+      # - name: Install Dependencies
+      #   run: |
+      #     cd functions
+      #     npm install
+      # - name: Deploy to Firebase
+      #   uses: w9jds/firebase-action@master
+      #   with:
+      #     args: deploy --only hosting,functions:helloWorld
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: githubactiontest-1c3bf

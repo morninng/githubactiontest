@@ -1,13 +1,13 @@
-name: learn-github-actions
-on: [push]
-jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "this is pen"
-      - uses: actions/checkout@v3
-      - run: |
-          ls -la
-          cd .github/workflows/
-          ls -la
+# name: learn-github-actions
+# on: [push]
+# jobs:
+#   check-bats-version:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "this is pen"
+#       - uses: actions/checkout@v3
+#       - run: |
+#           ls -la
+#           cd .github/workflows/
+#           ls -la
 
