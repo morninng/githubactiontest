@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
         
       - name: Save the sercret file
-        run: envsubst < secret_file_src_envsubst.json > secret_file.json
+        run: envsubst < ./functions/secret/test-secret.ts > secret_file.json
         env:
             SECRET_FILE: ${{ secrets.SECRET_FILE }}
       - name: Check
