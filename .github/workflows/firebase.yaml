@@ -13,12 +13,16 @@ jobs:
         run: |
           pwd
           ls
-
+          cd functions
+          ls -la
+          cd ..
       - name: Save the sercret file
         run: echo sss > ./functions/secret/test-secret2.json
       - name: Check Secret files
         run: |
           cd ./functions/secret
+          ls -la
+          cd functions
           ls -la
 
       - name: Install Dependencies

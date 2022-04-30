@@ -104,4 +104,6 @@ dist
 .tern-port
 
 
-/functions/secret/
+/functions/secret/*.ts
+/functions/secret/*.text
+/functions/secret/*.json
