@@ -11,7 +11,7 @@ export const helloWorld = functions.https.onRequest((request, response) => {
  response.send("ss");
 });
 
-export const helloWorld2 = functions.https.onRequest((request, response) => {
+export const helloWorld3 = functions.https.onRequest((request, response) => {
   const abc = secretJson.abc
  response.send(abc);
 });
