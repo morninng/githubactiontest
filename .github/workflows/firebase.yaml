@@ -11,9 +11,14 @@ jobs:
         
       - name: Save the sercret file
         run: echo ${{ secrets.SECRET_FILE }} > ./functions/secret/test-secret2.json
+      - name: Check Secret files
+        run: |
+          cd functions/secret
+          ls -la
+
       - name: Install Dependencies
         run: |
-          cd functions
+          cd ..
           npm install
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
