@@ -5,13 +5,15 @@ https://github.com/marketplace/actions/github-action-for-firebase
 https://us-central1-githubactiontest-1c3bf.cloudfunctions.net/helloWorld
 
 
-
+https://us-central1-githubactiontest-1c3bf.cloudfunctions.net/helloWorld3
 https://github.com/marketplace/actions/action-lint
 
 https://cli.github.com/manual/gh_secret_set
 
 
  gh secret set --env file SECRET_FILE < secret_file.json
+
+gh secret set MYSECRET < myfile.txt
 
 cd functions/secret
   gh secret set  SECRET_FILE < test-secret2.json
