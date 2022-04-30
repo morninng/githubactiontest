@@ -107,3 +107,6 @@ dist
 /functions/secret/*.ts
 /functions/secret/*.text
 /functions/secret/*.json
+/functions/lib/**/*.js
+/functions/lib/**/*.json
+/functions/lib/**/*.ts
