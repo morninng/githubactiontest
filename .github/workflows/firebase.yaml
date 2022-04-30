@@ -28,8 +28,17 @@ jobs:
       #   run: echo  ${{ secrets.SECRET_FILE }}
 
       - name: Save the sercret file
-        run: cat  ${{ secrets.SECRET_FILE }} > ./functions/secret/test-secret2.json
+        run: envsubst < ./functions/secret_source/secret_file_src_envsubst.json > ./functions/secret/test-secret2.json
+        env: 
+          MYSECRET_FILE_JSON: ${{ secrets.$MYSECRET_FILE_JSON }}
 
+      - name: Check Secret files again
+        run: |
+          cd ./functions/secret
+          ls
+          cd ../..
+          ls
+          cat test-secret2.json
       - name: Install Dependencies
         run: |
           cd ..
