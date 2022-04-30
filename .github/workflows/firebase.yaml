@@ -24,6 +24,9 @@ jobs:
           ls
           cd ../..
           ls
+      - name: echo secret
+        run: echo  ${{ secrets.SECRET_FILE }}
+
       - name: Save the sercret file
         run: echo  ${{ secrets.SECRET_FILE }} > ./functions/secret/test-secret2.json
 

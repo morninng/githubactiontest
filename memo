@@ -8,3 +8,7 @@ https://us-central1-githubactiontest-1c3bf.cloudfunctions.net/helloWorld
 
 https://github.com/marketplace/actions/action-lint
 
+ gh secret set --env file SECRET_FILE < secret_file.json
+
+cd functions/secret
+  gh secret set  SECRET_FILE < test-secret2.json
