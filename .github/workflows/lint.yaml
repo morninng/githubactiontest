@@ -1,23 +1,23 @@
-name: Lint
+# name: Lint
 
-on: [push]
+# on: [push]
 
-jobs:
-  run-linters:
-    name: Run linters
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: functions
+# jobs:
+#   run-linters:
+#     name: Run linters
+#     runs-on: ubuntu-latest
+#     defaults:
+#       run:
+#         working-directory: functions
 
-    steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Check out Git repository
+#         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        run:
-          npm install
+#       - name: Set up Node.js
+#         run:
+#           npm install
 
-      - name: Run eslint
-        run: 
-          npm run lint
+#       - name: Run eslint
+#         run: 
+#           npm run lint

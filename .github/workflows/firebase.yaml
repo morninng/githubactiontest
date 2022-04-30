@@ -1,8 +1,5 @@
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   deploy:
@@ -11,14 +8,46 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+
+      - name: check current directory
+        run: |
+          pwd
+          ls
+          cd functions
+          ls
+          cd ..
+      - name: Save dummy file
+        run: echo sss > ./functions/secret/test-secret2.json
+      - name: Check Secret files
+        run: |
+          cd ./functions/secret
+          ls
+          cd ../..
+          ls
+      # - name: echo secret
+      #   run: echo  ${{ secrets.SECRET_FILE }}
+
+      - name: Save the sercret file
+        run: envsubst < ./functions/secret_source/secret_file_src_envsubst.json > ./functions/secret/test-secret2.json
+        env: 
+          MYSECRET_FILE_JSON: ${{ secrets.MYSECRET_FILE_JSON }}
+
+      - name: Check Secret files again
+        run: |
+          cd ./functions/secret
+          ls
+          cat test-secret2.json
+          cd ../..
       - name: Install Dependencies
         run: |
           cd functions
           npm install
+          npm run build
+          
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting,functions:helloWorld
+          args: deploy --only hosting,functions:helloWorld,functions:helloWorld3
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           PROJECT_ID: githubactiontest-1c3bf
