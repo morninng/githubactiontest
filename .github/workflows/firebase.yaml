@@ -10,10 +10,10 @@ jobs:
         uses: actions/checkout@master
         
       - name: Save the sercret file
-        run: echo ${{ secrets.SECRET_FILE }} > ./functions/secret/test-secret2.json
+        run: echo sss > ./functions/secret/test-secret2.json
       - name: Check Secret files
         run: |
-          cd functions/secret
+          cd ./functions/secret
           ls -la
 
       - name: Install Dependencies
