@@ -8,7 +8,12 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-        
+
+      - name: check current directory
+        run: |
+          pwd
+          ls
+
       - name: Save the sercret file
         run: echo sss > ./functions/secret/test-secret2.json
       - name: Check Secret files
