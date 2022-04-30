@@ -38,9 +38,6 @@ jobs:
           ls
           cat test-secret2.json
           cd ../..
-      - name: Install Dependencies
-        run: |
-          npm install
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
