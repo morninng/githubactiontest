@@ -8,7 +8,20 @@ https://us-central1-githubactiontest-1c3bf.cloudfunctions.net/helloWorld
 
 https://github.com/marketplace/actions/action-lint
 
+https://cli.github.com/manual/gh_secret_set
+
+
  gh secret set --env file SECRET_FILE < secret_file.json
 
 cd functions/secret
   gh secret set  SECRET_FILE < test-secret2.json
+
+
+    PRODUCTION_TWITTER_API_KEY: 'aa',
+    PRODUCTION_TWITTER_API_SECRET: 'bb',
+    PRODUCTION_LINE_LOGIN_CHANNEL_SECRET: "cc",
+    PRODUCTION_LINE_MESSAGING_ACCESS_TOKEN: "dd//+/1O/=",
+    PRODUCTION_STRIPE_SECRET_KEY: 'ee',
+    PRODUCTION_STRIPE_WEBHOOK_SECRET: 'ff'
+
+    https://genzouw.com/entry/2021/01/14/220134/2113/

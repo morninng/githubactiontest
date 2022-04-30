@@ -30,7 +30,7 @@ jobs:
       - name: Save the sercret file
         run: envsubst < ./functions/secret_source/secret_file_src_envsubst.json > ./functions/secret/test-secret2.json
         env: 
-          MYSECRET_FILE_JSON: ${{ secrets.$MYSECRET_FILE_JSON }}
+          MYSECRET_FILE_JSON: ${{ secrets.MYSECRET_FILE_JSON }}
 
       - name: Check Secret files again
         run: |
