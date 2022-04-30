@@ -14,16 +14,18 @@ jobs:
           pwd
           ls
           cd functions
-          ls -la
+          ls
           cd ..
-      - name: Save the sercret file
+      - name: Save dummy file
         run: echo sss > ./functions/secret/test-secret2.json
       - name: Check Secret files
         run: |
           cd ./functions/secret
-          ls -la
-          cd functions
-          ls -la
+          ls
+          cd ../..
+          ls
+      - name: Save the sercret file
+        run: echo  ${{ secrets.SECRET_FILE }} > ./functions/secret/test-secret2.json
 
       - name: Install Dependencies
         run: |
